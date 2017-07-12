@@ -345,3 +345,6 @@ PRODUCT_BOOT_JARS += \
 # Enable vndk-sp Libraries
 PRODUCT_PACKAGES += vndk_package
 
+# VNDK-SP
+PRODUCT_PACKAGES += \
+    vndk-sp
