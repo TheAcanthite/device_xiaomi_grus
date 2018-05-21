@@ -36,7 +36,7 @@ qcom.hw.aac.encoder=true
 #
 # system props for the cne module
 #
-persist.cne.feature=1
+persist.vendor.cne.feature=1
 
 #system props for the MM modules
 media.stagefright.enable-player=true
@@ -60,9 +60,9 @@ ro.netflix.bsp_rev=Q670-14477-1
 #
 # system props for the data modules
 #
-ro.use_data_netmgrd=true
+ro.vendor.use_data_netmgrd=true
 persist.data.netmgrd.qos.enable=true
-persist.data.mode=concurrent
+persist.vendor.data.mode=concurrent
 
 #system props for time-services
 persist.timed.enable=true
