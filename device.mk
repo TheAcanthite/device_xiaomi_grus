@@ -141,6 +141,10 @@ PRODUCT_COPY_FILES += \
 
 TARGET_USES_NQ_NFC := true
 
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-service.xiaomi_grus
+
 # WLAN chipset
 WLAN_CHIPSET := qca_cld3
 
