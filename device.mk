@@ -189,6 +189,13 @@ PRODUCT_PACKAGES += \
     libOmxVidcCommon \
     libstagefrighthw
 
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.2-service.xiaomi_grus
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/power/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
+
 # WLAN chipset
 WLAN_CHIPSET := qca_cld3
 
@@ -226,9 +233,6 @@ PRODUCT_PACKAGES += \
 
 # MSM IRQ Balancer configuration file
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
-
-# Powerhint configuration file
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
 # Enable binderized USB HAL
 PRODUCT_PACKAGES += \
