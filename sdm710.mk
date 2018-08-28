@@ -17,7 +17,10 @@ TARGET_USES_AOSP := false
 TARGET_USES_AOSP_FOR_AUDIO := false
 TARGET_USES_QCOM_BSP := false
 
-ifneq ($(strip $(TARGET_USES_QSSI)),true)
+# RRO configuration
+TARGET_USES_RRO := true
+
+ifneq ($(strip $(TARGET_USES_RRO)),true)
 DEVICE_PACKAGE_OVERLAYS += device/qcom/sdm710/overlay
 endif
 
@@ -244,6 +247,11 @@ PRODUCT_PROPERTY_OVERRIDES += debug.vendor.qti.enable.lm=1
 
 #Property for setting the max timeout of autosuspend
 PRODUCT_PROPERTY_OVERRIDES += sys.autosuspend.timeout=500000
+
+# Property to enable app trigger
+PRODUCT_PROPERTY_OVERRIDES  += \
+  ro.vendor.at_library=libqti-at.so\
+  persist.vendor.qti.games.gt.prof=1
 
 #Enable QTI KEYMASTER and GATEKEEPER HIDLs
 KMGK_USE_QTI_SERVICE := true
