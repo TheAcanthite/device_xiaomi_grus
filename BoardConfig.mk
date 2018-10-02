@@ -174,6 +174,9 @@ VENDOR_SECURITY_PATCH := 2018-08-05
 # Sepolicy
 include device/qcom/sepolicy/sepolicy.mk
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
+
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 BOARD_VNDK_VERSION := current
