@@ -116,4 +116,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.se.type=eSE,HCE,UICC \
     ro.hardware.fp.fod=true \
     persist.vendor.sys.fp.fod.location.X_Y=448,1938 \
-    persist.vendor.sys.fp.fod.size.width_height=185,185
+    persist.vendor.sys.fp.fod.size.width_height=185,185 \
+    ro.surface_flinger.vsync_event_phase_offset_ns=2000000 \
+    ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000
