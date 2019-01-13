@@ -283,6 +283,10 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-service \
     thermal.sdm710
 
+# Trust HAL
+PRODUCT_PACKAGES += \
+    vendor.mokee.trust@1.0-service
+
 # Video platform properties file
 PRODUCT_COPY_FILES += hardware/qcom/media/conf_files/sdm845/system_properties.xml:$(TARGET_COPY_OUT_VENDOR)/etc/system_properties.xml
 
