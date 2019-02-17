@@ -160,9 +160,17 @@ PRODUCT_COPY_FILES += device/qcom/sdm710/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)
 PRODUCT_PACKAGES += camera.device@3.2-impl
 PRODUCT_PACKAGES += camera.device@1.0-impl
 PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-impl
-# Enable binderized camera HAL
-PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-service
 
+# Enable binderized camera HAL
+ifneq ("$(wildcard $(QCPATH)/chi-cdk/vendor/camx-component.mk)","")
+        include $(QCPATH)/chi-cdk/vendor/camx-component.mk
+                ifeq ($(CAMX_COMPONENT_2.1), true)
+                        PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-service_64
+                endif
+                ifneq ($(CAMX_COMPONENT_2.1),true)
+                        PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-service
+                endif
+endif
 # Enable binderized USB HAL
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
