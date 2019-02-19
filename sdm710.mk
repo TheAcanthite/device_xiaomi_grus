@@ -163,13 +163,14 @@ PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-impl
 
 # Enable binderized camera HAL
 ifneq ("$(wildcard $(QCPATH)/chi-cdk/vendor/camx-component.mk)","")
-        include $(QCPATH)/chi-cdk/vendor/camx-component.mk
+include $(QCPATH)/chi-cdk/vendor/camx-component.mk
                 ifeq ($(CAMX_COMPONENT_2.1), true)
                         PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-service_64
-                endif
-                ifneq ($(CAMX_COMPONENT_2.1),true)
+                else
                         PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-service
                 endif
+else
+                      PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-service
 endif
 # Enable binderized USB HAL
 PRODUCT_PACKAGES += \
