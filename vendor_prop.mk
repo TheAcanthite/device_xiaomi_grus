@@ -128,4 +128,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
     ro.bluetooth.a2dp_offload.supported=true \
     persist.dbg.volte_avail_ovr=1 \
-    persist.dbg.vt_avail_ovr=1
+    persist.dbg.vt_avail_ovr=1 \
+    persist.sys.fflag.override.settings_network_and_internet_v2=true
