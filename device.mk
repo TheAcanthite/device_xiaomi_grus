@@ -13,9 +13,6 @@ PRODUCT_CHARACTERISTICS := nosdcard
 # WLAN chipset
 WLAN_CHIPSET := qca_cld3
 
-#Android EGL implementation
-PRODUCT_PACKAGES += libGLES_android
-
 -include $(QCPATH)/common/config/qtic-config.mk
 -include hardware/qcom/display/config/sdm710.mk
 
