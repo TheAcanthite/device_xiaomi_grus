@@ -162,6 +162,9 @@ TARGET_RIL_VARIANT := caf
 # Seccomp
 BOARD_SECCOMP_POLICY := $(DEVICE_PATH)/seccomp
 
+# Security Patch Level
+VENDOR_SECURITY_PATCH := 2018-08-05
+
 #Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
 TARGET_HW_DISK_ENCRYPTION_PERF := true
@@ -183,7 +186,6 @@ endif
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 
 #Enable split vendor image
-ENABLE_VENDOR_IMAGE := true
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
@@ -206,10 +208,6 @@ BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
 
 #Enable LM
 TARGET_USES_LM := true
-
-ifeq ($(ENABLE_VENDOR_IMAGE), false)
-$(error "Vendor Image is mandatory !!")
-endif
 
 #Flag to enable System SDK Requirements.
 #All vendor APK will be compiled against system_current API set.
