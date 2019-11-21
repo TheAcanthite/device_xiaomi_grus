@@ -90,6 +90,9 @@ ifeq ($(HOST_OS),linux)
   endif
 endif
 
+# DRM
+TARGET_ENABLE_MEDIADRM_64 := true
+
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
 
@@ -171,9 +174,6 @@ BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
 
 #Enable LM
 TARGET_USES_LM := true
-
-#Enable DRM plugins 64 bit compilation
-TARGET_ENABLE_MEDIADRM_64 := true
 
 ifeq ($(ENABLE_VENDOR_IMAGE), false)
 $(error "Vendor Image is mandatory !!")
