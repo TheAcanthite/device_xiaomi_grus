@@ -5,8 +5,6 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-TARGET_KERNEL_VERSION := 4.9
-
 TARGET_USES_NQ_NFC := true
 
 # default is nosdcard, S/W button enabled in resource
