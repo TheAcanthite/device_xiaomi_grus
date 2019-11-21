@@ -187,9 +187,6 @@ PRODUCT_PROPERTY_OVERRIDES  += \
   ro.vendor.at_library=libqti-at.so\
   persist.vendor.qti.games.gt.prof=1
 
-#Enable KEYMASTER 4.0
-ENABLE_KM_4_0 := true
-
 # dm-verity definitions
 ifneq ($(BOARD_AVB_ENABLE), true)
     PRODUCT_SUPPORTS_VERITY := true
