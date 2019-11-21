@@ -1,3 +1,6 @@
+# Get non-open-source specific aspects
+$(call inherit-product-if-exists, vendor/xiaomi/grus/grus-vendor.mk)
+
 # Override heap growth limit due to high display density on device
 PRODUCT_PROPERTY_OVERRIDES += \
   dalvik.vm.heapgrowthlimit=256m
