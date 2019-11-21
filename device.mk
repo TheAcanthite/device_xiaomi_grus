@@ -83,14 +83,6 @@ PRODUCT_PACKAGES += android.hardware.media.omx@1.0-impl
 
 PRODUCT_PACKAGES += fs_config_files
 
-DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
-DEVICE_MATRIX_FILE   := device/qcom/common/compatibility_matrix.xml
-DEVICE_FRAMEWORK_MANIFEST_FILE := $(LOCAL_PATH)/framework_manifest.xml
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    device/qcom/common/vendor_framework_compatibility_matrix.xml
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
-    $(LOCAL_PATH)/vendor_framework_compatibility_matrix.xml
-
 #ANT+ stack
 PRODUCT_PACKAGES += \
     AntHalService \
