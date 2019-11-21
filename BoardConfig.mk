@@ -122,6 +122,9 @@ TARGET_PROVIDES_KEYMASTER := true
 # Media
 TARGET_USES_MEDIA_EXTENSIONS := true
 
+# NFC
+TARGET_USES_NQ_NFC := true
+
 #Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
 TARGET_HW_DISK_ENCRYPTION_PERF := true
