@@ -10,8 +10,6 @@ TARGET_USES_NQ_NFC := true
 # default is nosdcard, S/W button enabled in resource
 PRODUCT_CHARACTERISTICS := nosdcard
 
-BOARD_FRP_PARTITION_NAME := frp
-
 # WLAN chipset
 WLAN_CHIPSET := qca_cld3
 
