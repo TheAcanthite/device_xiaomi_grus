@@ -3,12 +3,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
   dalvik.vm.heapgrowthlimit=256m
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
-# RRO configuration
-TARGET_USES_RRO := true
-
-ifneq ($(strip $(TARGET_USES_RRO)),true)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-endif
 
 TARGET_KERNEL_VERSION := 4.9
 
