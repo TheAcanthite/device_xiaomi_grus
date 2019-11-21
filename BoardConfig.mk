@@ -168,6 +168,13 @@ VENDOR_SECURITY_PATCH := 2018-08-05
 # Sepolicy
 include device/qcom/sepolicy/sepolicy.mk
 
+# Treble
+BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
+BOARD_VNDK_VERSION := current
+PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
+PRODUCT_FULL_TREBLE_OVERRIDE := true
+PRODUCT_VENDOR_MOVE_ENABLED := true
+
 #Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
 TARGET_HW_DISK_ENCRYPTION_PERF := true
@@ -187,9 +194,6 @@ endif
 
 #Enable Charging Icon
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
-
-#Enable split vendor image
-BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 TARGET_INIT_VENDOR_LIB := libinit_msm
@@ -211,8 +215,3 @@ BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
 
 #Enable LM
 TARGET_USES_LM := true
-
-#Flag to enable System SDK Requirements.
-#All vendor APK will be compiled against system_current API set.
-BOARD_SYSTEMSDK_VERSIONS:=28
-BOARD_VNDK_VERSION:= current
