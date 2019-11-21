@@ -165,6 +165,9 @@ BOARD_SECCOMP_POLICY := $(DEVICE_PATH)/seccomp
 # Security Patch Level
 VENDOR_SECURITY_PATCH := 2018-08-05
 
+# Sepolicy
+include device/qcom/sepolicy/sepolicy.mk
+
 #Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
 TARGET_HW_DISK_ENCRYPTION_PERF := true
