@@ -13,9 +13,6 @@ PRODUCT_CHARACTERISTICS := nosdcard
 # WLAN chipset
 WLAN_CHIPSET := qca_cld3
 
--include $(QCPATH)/common/config/qtic-config.mk
--include hardware/qcom/display/config/sdm710.mk
-
 # Video seccomp policy files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
@@ -45,9 +42,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml
 
 PRODUCT_PACKAGES += android.hardware.media.omx@1.0-impl
-
-# Audio configuration file
--include $(TOPDIR)hardware/qcom/audio/configs/sdm710/sdm710.mk
 
 PRODUCT_PACKAGES += fs_config_files
 
