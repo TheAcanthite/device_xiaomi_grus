@@ -273,12 +273,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     $(LOCAL_PATH)/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml
 
-PRODUCT_PACKAGES += android.hardware.media.omx@1.0-impl
-
-PRODUCT_PACKAGES += \
-    android.hardware.configstore@1.0-service \
-    android.hardware.broadcastradio@1.0-impl
-
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
