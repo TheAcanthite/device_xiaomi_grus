@@ -1,6 +1,9 @@
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/xiaomi/grus/grus-vendor.mk)
 
+# Vendor properties
+-include $(LOCAL_PATH)/vendor_prop.mk
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
@@ -305,44 +308,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
-
-#Add soft home, back and multitask keys
-PRODUCT_PROPERTY_OVERRIDES += \
-    qemu.hw.mainkeys=0
-
-# system prop for opengles version
-#
-# 196608 is decimal for 0x30000 to report version 3
-# 196609 is decimal for 0x30001 to report version 3.1
-# 196610 is decimal for 0x30002 to report version 3.2
-PRODUCT_PROPERTY_OVERRIDES  += \
-    ro.opengles.version=196610
-
-#system prop for bluetooth SOC type
-PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.qcom.bluetooth.soc=cherokee
-
-PRODUCT_PROPERTY_OVERRIDES += rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
-
-#Set property to enable zRam
-PRODUCT_PROPERTY_OVERRIDES += ro.vendor.qti.config.zram=true
-
-#Property to set BG App limit
-PRODUCT_PROPERTY_OVERRIDES += ro.vendor.qti.sys.fw.bg_apps_limit=60
-
-#Property to enable IO cgroups
-PRODUCT_PROPERTY_OVERRIDES += ro.vendor.iocgrp.config=1
-
-#Property for enabling learning module
-PRODUCT_PROPERTY_OVERRIDES += debug.vendor.qti.enable.lm=1
-
-#Property for setting the max timeout of autosuspend
-PRODUCT_PROPERTY_OVERRIDES += sys.autosuspend.timeout=500000
-
-# Property to enable app trigger
-PRODUCT_PROPERTY_OVERRIDES  += \
-  ro.vendor.at_library=libqti-at.so\
-  persist.vendor.qti.games.gt.prof=1
 
 # dm-verity definitions
 ifneq ($(BOARD_AVB_ENABLE), true)
