@@ -369,6 +369,9 @@ firmware_directories /vendor/firmware_mnt/image/
 #Memory Offline
 /sys/devices/system/memory/memory* state    0660 system system
 
+# Elliptic
+/dev/elliptic0                 0644   system       system
+/dev/elliptic1                 0644   system       system
 # sys-fs display
 /sys/class/graphics/fb*     hpd                      0664    system  graphics
 /sys/class/graphics/fb*     res_info                 0664    system  graphics
