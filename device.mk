@@ -96,6 +96,18 @@ PRODUCT_PACKAGES += \
     android.hardware.contexthub@1.0-impl.generic \
     android.hardware.contexthub@1.0-service
 
+# Display
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-service \
+    android.hardware.graphics.mapper@2.0-impl-qti-display \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
+    libtinyxml \
+    libvulkan \
+    vendor.display.config@1.7 \
+    vendor.qti.hardware.display.allocator@1.0-service
+
 TARGET_USES_NQ_NFC := true
 
 # WLAN chipset
