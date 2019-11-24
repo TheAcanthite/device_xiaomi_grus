@@ -114,6 +114,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.1-service.clearkey
 
+# GPS
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/gps,$(TARGET_COPY_OUT_VENDOR)/etc)
+
 TARGET_USES_NQ_NFC := true
 
 # WLAN chipset
