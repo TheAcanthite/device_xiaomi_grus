@@ -122,6 +122,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-service
 
+# IMS
+PRODUCT_PACKAGES += \
+    ims-ext-common
+
 TARGET_USES_NQ_NFC := true
 
 # WLAN chipset
