@@ -230,9 +230,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
-# WLAN chipset
-WLAN_CHIPSET := qca_cld3
-
 # Video seccomp policy files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
@@ -291,25 +288,23 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OU
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
 
-# WLAN host driver
-ifneq ($(WLAN_CHIPSET),)
-PRODUCT_PACKAGES += $(WLAN_CHIPSET)_wlan.ko
-endif
-
 # Wifi
+PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service \
+    hostapd \
+    hostapd_cli \
+    libqsap_sdk \
+    libQWiFiSoftApCfg \
+    libwifi-hal-qcom \
+    libwpa_client \
+    wificond \
+    wpa_supplicant \
+    wpa_supplicant.conf
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
-
-PRODUCT_PACKAGES += \
-    wpa_supplicant_overlay.conf \
-    p2p_supplicant_overlay.conf
-
-#for wlan
-PRODUCT_PACKAGES += \
-    wificond \
-    wifilogd
 
 #Add soft home, back and multitask keys
 PRODUCT_PROPERTY_OVERRIDES += \
