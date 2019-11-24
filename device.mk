@@ -254,6 +254,12 @@ PRODUCT_PACKAGES += telephony-ext
 PRODUCT_PACKAGES += \
     textclassifier.bundle1
 
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@1.0-impl \
+    android.hardware.thermal@1.0-service \
+    thermal.sdm710
+
 ifneq ($(strip $(QCPATH)),)
     PRODUCT_BOOT_JARS += WfdCommon
 endif
@@ -352,9 +358,6 @@ endif
 BOARD_VOICEUI_USE_DUEROS := true
 
 ENABLE_VENDOR_RIL_SERVICE := true
-#Thermal
-PRODUCT_PACKAGES += android.hardware.thermal@1.0-impl \
-                    android.hardware.thermal@1.0-service
 
 # Enable vndk-sp Libraries
 PRODUCT_PACKAGES += vndk_package
