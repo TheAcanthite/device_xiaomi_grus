@@ -128,6 +128,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ims-ext-common
 
+# Init
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/init/vendor,$(TARGET_COPY_OUT_VENDOR))
+
 # Input
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/keylayout,system/usr/keylayout)
@@ -276,12 +280,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     wificond \
     wifilogd
-
-# Ramdisk
-PRODUCT_PACKAGES += \
-    init.qti.qseecomd.sh \
-    init.target.rc \
-    fstab.qcom
 
 # Sensor conf files
 PRODUCT_COPY_FILES += \
