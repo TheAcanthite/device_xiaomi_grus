@@ -85,6 +85,12 @@ PRODUCT_PACKAGES += \
     bt-mac-generator \
     libbthost_if
 
+# Camera
+PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-service\
+    Snap
+
 TARGET_USES_NQ_NFC := true
 
 # WLAN chipset
@@ -133,22 +139,6 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OU
 # Powerhint configuration file
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
-# Camera configuration file. Shared by passthrough/binderized camera HAL
-PRODUCT_PACKAGES += camera.device@3.2-impl
-PRODUCT_PACKAGES += camera.device@1.0-impl
-PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-impl
-
-# Enable binderized camera HAL
-ifneq ("$(wildcard $(QCPATH)/chi-cdk/vendor/camx-component.mk)","")
-include $(QCPATH)/chi-cdk/vendor/camx-component.mk
-                ifeq ($(CAMX_COMPONENT_2.1), true)
-                        PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-service_64
-                else
-                        PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-service
-                endif
-else
-                      PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-service
-endif
 # Enable binderized USB HAL
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
