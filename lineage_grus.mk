@@ -35,7 +35,7 @@ PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="grus" \
     PRODUCT_NAME="grus" \
-    BUILD_FINGERPRINT := "Xiaomi/grus/grus:9/PKQ1.181121.001/9.7.11:user/release-keys" \
-    PRIVATE_BUILD_DESC="grus-user 9 PKQ1.181121.001 9.7.11 release-keys"
+    BUILD_FINGERPRINT := "Xiaomi/grus/grus:9/PKQ1.181121.001/V10.3.3.0.PFBCNXM:user/release-keys" \
+    PRIVATE_BUILD_DESC="grus-user 9 PKQ1.181121.001 V10.3.3.0.PFBCNXM release-keys"
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
