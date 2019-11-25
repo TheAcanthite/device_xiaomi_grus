@@ -127,6 +127,13 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.1-service.clearkey
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    vendor.mokee.biometrics.fingerprint.inscreen@1.0-service.xiaomi_grus
+
+PRODUCT_COPY_FILES += \
+    vendor/mk/config/permissions/vendor.mokee.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/vendor.mokee.biometrics.fingerprint.inscreen.xml
+
 # GPS
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/gps,$(TARGET_COPY_OUT_VENDOR)/etc)
