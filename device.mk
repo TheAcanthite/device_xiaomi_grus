@@ -331,7 +331,3 @@ PRODUCT_BOOT_JARS += \
 # Enable vndk-sp Libraries
 PRODUCT_PACKAGES += vndk_package
 
-$(call inherit-product, build/make/target/product/product_launched_with_p.mk)
-
-PRODUCT_COPY_FILES += \
-    device/qcom/sdm710/manifest_sxr1130.xml:$(TARGET_COPY_OUT_VENDOR)/odm/etc/vintf/manifest_371.xml
