@@ -290,15 +290,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.mokee.trust@1.0-service
 
-# Video platform properties file
-PRODUCT_COPY_FILES += hardware/qcom/media/conf_files/sdm845/system_properties.xml:$(TARGET_COPY_OUT_VENDOR)/etc/system_properties.xml
-
-# Video codec configuration files
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml \
-    $(LOCAL_PATH)/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
-    $(LOCAL_PATH)/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml
-
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
@@ -336,16 +327,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
-
-# dm-verity definitions
-ifneq ($(BOARD_AVB_ENABLE), true)
-    PRODUCT_SUPPORTS_VERITY := true
-endif
-
-#Enable DuerOS for voiceUI
-BOARD_VOICEUI_USE_DUEROS := true
-
-ENABLE_VENDOR_RIL_SERVICE := true
 
 # Enable vndk-sp Libraries
 PRODUCT_PACKAGES += vndk_package
