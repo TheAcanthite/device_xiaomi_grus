@@ -1189,7 +1189,7 @@ vendor/etc/thermal-engine-sdm710-sgame.conf
 vendor/etc/thermal-engine.conf
 
 # Time services
--vendor/app/TimeService/TimeService.apk
+-vendor/app/TimeService/TimeService.apk;:timeservice_app_cert
 vendor/bin/time_daemon
 vendor/lib64/libtime_genoff.so
 vendor/lib/libtime_genoff.so
