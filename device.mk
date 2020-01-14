@@ -137,7 +137,7 @@ PRODUCT_PACKAGES += \
     vendor.mokee.biometrics.fingerprint.inscreen@1.0-service.xiaomi_grus
 
 PRODUCT_COPY_FILES += \
-    vendor/mk/config/permissions/vendor.mokee.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/vendor.mokee.biometrics.fingerprint.inscreen.xml
+    vendor/mokee/config/permissions/vendor.mokee.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/vendor.mokee.biometrics.fingerprint.inscreen.xml
 
 # GPS
 PRODUCT_COPY_FILES += \
