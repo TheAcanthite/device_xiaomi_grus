@@ -94,28 +94,18 @@ vendor/firmware/cs35l41-dsp1-diag.wmfw
 vendor/firmware/cs35l41-dsp1-spk-prot.bin
 vendor/firmware/cs35l41-dsp1-spk-prot.wmfw
 
-# ANT+ (system) - from qcs605-eng 9 PKQ1.190101.001 22 test-keys
-lib/com.qualcomm.qti.ant@1.0.so|e99b1aec08a6c5a48aaa5a866319f9692614e931
--lib/libantradio.so|88325bafc5603a92c0fd7c49ddc72dca58542055
-lib64/com.qualcomm.qti.ant@1.0.so|8927ece2baecd9d5416786523147044aba46dcce
--lib64/libantradio.so|562b15d5ca0fbf3f1ad42c578b8c7fd4c277eed6
-
-# ANT+ (vendor) - from qcs605-eng 9 PKQ1.190101.001 22 test-keys
-vendor/lib/com.qualcomm.qti.ant@1.0.so|170e119957faa5cb725b022d486eddb6ea470d6b
-vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so|81e82381bac0f4815177ea77f0c6572f3acf3ec7
-vendor/lib64/com.qualcomm.qti.ant@1.0.so|7759fabc3c335b54f241821e19ab93632e1d30fd
-vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so|55cb0c0759d27c8180f0ee9b6035a7b3fb859cf3
-
 # Bluetooth
-vendor/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so
-vendor/lib64/hw/com.qualcomm.qti.bluetooth_audio@1.0-impl.so
-vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
-vendor/lib/hw/com.qualcomm.qti.bluetooth_audio@1.0-impl.so
-
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
+vendor/bin/wcnss_filter
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
-vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib64/hw/com.qualcomm.qti.bluetooth_audio@1.0-impl.so
+vendor/lib64/libbtnv.so
+vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
+vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib/hw/com.qualcomm.qti.bluetooth_audio@1.0-impl.so
+vendor/lib/libbtnv.so
 
 # Bluetooth (aptX) - from crosshatch - PD1A.180720.030
 lib64/libaptX_encoder.so|0cebad28afcf29f931bdc2d24fce2730dc882ecf
@@ -125,7 +115,6 @@ lib64/libaptXHD_encoder.so|90f47f10af28b3ead143200cb4370b847c513127
 vendor/etc/camera/beauty_ui9_intelligent_params.config
 vendor/etc/camera/body_slim_ui9_params.config
 vendor/etc/camera/camxoverridesettings.txt
-vendor/etc/camera/CFR_para.bin
 vendor/etc/camera/eyelineblush.cng
 vendor/etc/camera/GpuKernelRepo.pb
 vendor/etc/camera/LDC_packdata_xiaomi_F2_src1.dat
@@ -165,16 +154,30 @@ vendor/lib/libSuperSensor.so
 vendor/lib/libSuperSensorCPU.so
 vendor/lib/libmialgo_sd.so
 vendor/lib/libVDClearShot.so
-vendor/lib/camera/com.qti.sensormodule.imx586_II.bin
-vendor/lib/camera/com.qti.sensormodule.s5k3t1.bin
-vendor/lib/camera/fdconfigpreview.bin
-vendor/lib/camera/com.qti.tuned.grus_sunny_s5k3l6.bin
-vendor/lib/camera/com.qti.tuned.grus_sunny_s5k3t1.bin
 vendor/lib/camera/com.qti.sensor.imx586_grus.so
-vendor/lib/camera/com.qti.tuned.default.bin
+vendor/lib/camera/com.qti.sensormodule.imx586.bin
+vendor/lib/camera/com.qti.sensormodule.imx586_II.bin
+vendor/lib/camera/com.qti.sensormodule.ov8856.bin
+vendor/lib/camera/com.qti.sensormodule.ov8856_II.bin
+vendor/lib/camera/com.qti.sensormodule.s5k3l6.bin
+vendor/lib/camera/com.qti.sensormodule.s5k3l6_II.bin
+vendor/lib/camera/com.qti.sensormodule.s5k3t1.bin
 vendor/lib/camera/com.qti.sensormodule.s5k3t1_II.bin
 vendor/lib/camera/com.qti.sensor.ov8856.so
-vendor/lib/camera/com.qti.sensormodule.s5k3l6_II.bin
+vendor/lib/camera/com.qti.sensor.s5k3l6.so
+vendor/lib/camera/com.qti.sensor.s5k3t1.so
+vendor/lib/camera/com.qti.tuned.default.bin
+vendor/lib/camera/com.qti.tuned.grus_ofilm_imx586.bin
+vendor/lib/camera/com.qti.tuned.grus_ofilm_ov8856.bin
+vendor/lib/camera/com.qti.tuned.grus_ofilm_s5k3l6.bin
+vendor/lib/camera/com.qti.tuned.grus_ofilm_s5k3t1.bin
+vendor/lib/camera/com.qti.tuned.grus_sunny_imx586.bin
+vendor/lib/camera/com.qti.tuned.grus_sunny_ov8856.bin
+vendor/lib/camera/com.qti.tuned.grus_sunny_s5k3l6.bin
+vendor/lib/camera/com.qti.tuned.grus_sunny_s5k3t1.bin
+vendor/lib/camera/fdconfigpreview.bin
+vendor/lib/camera/fdconfigpreviewlite.bin
+vendor/lib/camera/fdconfigvideo.bin
 vendor/lib/camera/fdconfigvideolite.bin
 vendor/lib/camera/components/com.qti.node.dummyrtb.so
 vendor/lib/camera/components/com.vidhance.node.eis.so
@@ -199,9 +202,6 @@ vendor/lib/camera/components/com.arcsoft.node.skinbeautifier.so
 vendor/lib/camera/components/com.vidhance.stats.aec_dmbr.so
 vendor/lib/camera/components/com.qti.node.sr.so
 vendor/lib/camera/components/com.arcsoft.node.capturefusion.so
-vendor/lib/camera/components/etc/morpho_lowlight4.0_adrc_high.xml
-vendor/lib/camera/components/etc/morpho_lowlight4.0.xml
-vendor/lib/camera/components/etc/morpho_lowlight4.0_adrc_high_1.xml
 vendor/lib/camera/components/com.qtistatic.stats.pdlib.so
 vendor/lib/camera/components/com.qti.node.gpu.so
 vendor/lib/camera/components/com.qtistatic.stats.af.so
@@ -211,7 +211,6 @@ vendor/lib/camera/components/com.arcsoft.node.hdr.so
 vendor/lib/camera/components/com.arcsoft.node.realtimebokeh.so
 vendor/lib/camera/components/com.altek.node.distortioncorrection.so
 vendor/lib/camera/components/com.xiaomi.node.mibokeh.so
-vendor/lib/camera/components/com.altek.node.depurple.so
 vendor/lib/camera/components/com.qti.stats.afd.so
 vendor/lib/camera/components/com.arcsoft.node.distortioncorrection.so
 vendor/lib/camera/components/com.qti.stats.asd.so
@@ -220,24 +219,9 @@ vendor/lib/camera/components/com.visidon.node.sr.so
 vendor/lib/camera/components/com.qtistatic.stats.awb.so
 vendor/lib/camera/components/com.arcsoft.node.smoothtransition.so
 vendor/lib/camera/components/com.qti.node.xiaomigenderage.so
-vendor/lib/camera/components/com.qti.node.photosolid.so
 vendor/lib/camera/components/com.arcsoft.node.superlowlight.so
 vendor/lib/camera/components/com.qti.stats.aec.so
 vendor/lib/camera/components/com.qti.hvx.binning.so
-vendor/lib/camera/com.qti.sensormodule.s5k3l6.bin
-vendor/lib/camera/com.qti.tuned.grus_sunny_ov8856.bin
-vendor/lib/camera/com.qti.tuned.grus_ofilm_s5k3l6.bin
-vendor/lib/camera/com.qti.sensor.s5k3l6.so
-vendor/lib/camera/com.qti.tuned.grus_ofilm_imx586.bin
-vendor/lib/camera/fdconfigpreviewlite.bin
-vendor/lib/camera/com.qti.tuned.grus_ofilm_ov8856.bin
-vendor/lib/camera/com.qti.sensormodule.ov8856.bin
-vendor/lib/camera/fdconfigvideo.bin
-vendor/lib/camera/com.qti.sensor.s5k3t1.so
-vendor/lib/camera/com.qti.tuned.grus_sunny_imx586.bin
-vendor/lib/camera/com.qti.tuned.grus_ofilm_s5k3t1.bin
-vendor/lib/camera/com.qti.sensormodule.ov8856_II.bin
-vendor/lib/camera/com.qti.sensormodule.imx586.bin
 vendor/lib/hw/camera.qcom.so
 vendor/lib/hw/com.qti.chi.override.so
 vendor/lib/libcamera_scene.so
@@ -252,14 +236,12 @@ vendor/lib/libsymphony-cpu.so
 vendor/lib/libsymphonypower.so
 vendor/lib/libvidhance.so
 vendor/lib/libXMFD_AgeGender.so
-vendor/lib/lib_denoiser3.so
 vendor/lib/mibokeh_712_opencl.bin
 vendor/lib/libmegface.so
 vendor/lib/libMegviiFacepp-0.5.2.so
 vendor/lib/libalhLDC.so
 vendor/lib/libalLDC.so
 vendor/lib/libalRnBRT_GL_GBWRAPPER.so
-vendor/lib/libalCFR.so
 vendor/lib/libremosaiclib.so
 vendor/lib/libremosaic_daemon.so
 vendor/lib/libscveFaceRecognition.so
@@ -527,19 +509,6 @@ vendor/lib64/vendor.goodix.hardware.biometrics.fingerprint@2.1.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
 
-# FM - from qcs605-eng 9 PKQ1.190101.001 22 test-keys
-lib/libfm-hci.so|b066567e07279bf59e78f7d318302dd706bb80fe
-lib/fm_helium.so|fb2a591a61122bbdf818ba9e6c931aa7c3d8a953
-lib64/libfm-hci.so|24cd3321d251409aec7d5b6fe160c9fd37a12af5
-lib64/fm_helium.so|e41e3a18f5a0dc666adad471e7332c707b4d2044
-vendor/bin/fm_qsoc_patches|0606f812abb9e0b74875a5819d24c43dc127e1af
--lib/vendor.qti.hardware.fm@1.0.so|e383388c912ee43bd00eefcac60e179c863e858b
--lib64/vendor.qti.hardware.fm@1.0.so|5c5beea6433843df16650789c6bab947b371c23a
-vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so|b58c7e1ba7f7ff2b1f525c0cdc3864e885b97cf2
-vendor/lib/vendor.qti.hardware.fm@1.0.so|ff103851777cad17b665e1ea2df37deebdcbee43
-vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|3d9c60edfb5a69e299f9dbfb974d8b7cca272932
-vendor/lib64/vendor.qti.hardware.fm@1.0.so|b1572c12b2e5701c488d65aa4651b8ff9437f6ee
-
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
 vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
@@ -776,7 +745,6 @@ vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.0.so
 vendor/etc/init/android.hardware.neuralnetworks@1.1-service-qti.rc
 vendor/bin/hw/android.hardware.neuralnetworks@1.1-service-qti
 vendor/lib64/libhexagon_nn_stub.so
-vendor/lib/rfsa/adsp/libhexagon_nn_skel.so
 
 # NFC firmware
 vendor/firmware/libpn553_rec.so
@@ -798,7 +766,6 @@ vendor/etc/perf/commonresourceconfigs.xml
 vendor/etc/perf/perfboostsconfig.xml
 vendor/etc/perf/targetconfig.xml
 vendor/etc/perf/targetresourceconfigs.xml
-vendor/etc/perf/thermalboost.conf
 vendor/lib64/libperfgluelayer.so
 vendor/lib64/libqti-perfd-client.so
 vendor/lib64/libqti-perfd.so
@@ -820,16 +787,13 @@ vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 vendor/lib/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib/vendor.qti.hardware.alarm@1.0.so
 
-# Power-off charging daemon
--sbin/charger:sbin/chargeonlymode;rootfs|f048d2cc20783ba1a608b73d440b3053af6ec9fd
-
 # QDCM calibration data
 vendor/etc/qdcm_calib_data_Dual_nt35597_video_mode_dsi_truly_panel_without_DSC.xml
 vendor/etc/qdcm_calib_data_nt35597_cmd_mode_dsi_truly_panel_with_DSC.xml
 vendor/etc/qdcm_calib_data_samsung_ea8076_fhd_cmd_dsi_panel.xml
 
 # QMI
-etc/permissions/qti_libpermissions.xml
+etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
 etc/permissions/qti_permissions.xml
 vendor/bin/irsc_util
 vendor/lib64/libdiag.so
@@ -1188,7 +1152,6 @@ vendor/etc/thermal-engine-sdm710-nolimits.conf
 vendor/etc/thermal-engine-sdm710-phone.conf
 vendor/etc/thermal-engine-sdm710-pubgmhd.conf
 vendor/etc/thermal-engine-sdm710-sgame.conf
-vendor/etc/thermal-engine-sdm710-tgame.conf
 vendor/etc/thermal-engine.conf
 
 # Time services
