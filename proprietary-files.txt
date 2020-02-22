@@ -529,6 +529,8 @@ vendor/lib64/hw/android.hardware.gnss@1.0-impl-qti.so
 vendor/lib64/hw/vendor.qti.gnss@1.2-impl.so
 vendor/lib64/libaoa.so
 vendor/lib64/libdataitems.so
+vendor/lib64/libDRPlugin.so
+vendor/lib64/libdrplugin_client.so
 vendor/lib64/libflp.so
 vendor/lib64/libgarden.so
 vendor/lib64/libgdtap.so
@@ -540,6 +542,7 @@ vendor/lib64/libizat_client_api.so
 vendor/lib64/libizat_core.so
 vendor/lib64/liblbs_core.so
 vendor/lib64/libloc_api_v02.so
+vendor/lib64/libloc_ds_api.so
 vendor/lib64/libloc_core.so
 vendor/lib64/liblocation_api.so
 vendor/lib64/liblocationservice_glue.so
@@ -547,7 +550,9 @@ vendor/lib64/liblocationservice.so
 vendor/lib64/liblowi_client.so
 vendor/lib64/liblowi_wifihal.so
 vendor/lib64/libslimclient.so
+vendor/lib64/libulp2.so
 vendor/lib64/libxtadapter.so
+vendor/lib64/libxtwifi_ulp_adaptor.so
 vendor/lib64/libdiag_jni.so
 vendor/lib64/libdiagjni.so
 vendor/lib64/libevent_observer.so
@@ -646,6 +651,8 @@ vendor/lib64/libgcs.so
 vendor/lib64/liblistenjni.so
 vendor/lib64/liblistensoundmodel2.so
 vendor/lib64/libmulawdec.so
+vendor/lib64/libnwa.so
+vendor/lib64/libsse.so
 vendor/lib/hw/sound_trigger.primary.sdm710.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libcapiv2svacnn.so
@@ -658,6 +665,8 @@ vendor/lib/libsmwrapper.so
 vendor/lib/liblistenjni.so
 vendor/lib/liblistensoundmodel2.so
 vendor/lib/libmulawdec.so
+vendor/lib/libnwa.so
+vendor/lib/libsse.so
 
 # Media
 lib64/extractors/libmmparser.so
@@ -774,6 +783,11 @@ vendor/lib64/liblearningmodule.so
 vendor/lib64/libmeters.so
 vendor/lib64/libqti-utils.so
 vendor/lib64/vendor.qti.hardware.perf@1.0.so
+vendor/lib/libperfgluelayer.so
+vendor/lib/libqti-perfd-client.so
+vendor/lib/libqti-perfd.so
+vendor/lib/libqti-util.so
+vendor/lib/vendor.qti.hardware.perf@1.0.so
 
 
 # Power-off alarm
