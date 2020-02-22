@@ -48,6 +48,7 @@ vendor/lib/rfsa/adsp/misound_res.bin
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
 
 # Audio
+vendor/etc/audio.scd
 vendor/lib64/hw/audio.primary.sdm710.so
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbrtac.so
