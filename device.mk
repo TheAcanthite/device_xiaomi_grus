@@ -224,6 +224,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-brcm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-brcm.conf \
     $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
 
+# Secure element
+PRODUCT_PACKAGES += \
+    SecureElement
+
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
