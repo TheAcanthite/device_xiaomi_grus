@@ -1,22 +1,27 @@
 <mixer>
     <ctl name="PRIM_MI2S_RX Channels" value="Two" />
+    <ctl name="PRIM_MI2S_RX Format" value="S24_LE" />
+    <ctl name="PRIM_MI2S_RX SampleRate" value="KHZ_48" />
     <ctl name="PRIM_MI2S_TX Channels" value="Two" />
+    <ctl name="PRIM_MI2S_TX Format" value="S24_LE" />
+    <ctl name="PRIM_MI2S_TX SampleRate" value="KHZ_48" />
     <ctl name="PRI_MI2S_RX_VI_FB_MUX" value="ZERO" />
     <ctl name="PRIM_MI2S_RX SampleRate" value="KHZ_48" />
-+<!--
+<!--
     <ctl name="Cirrus SP FBPort" value="PRI_MI2S_RX" />
     <ctl name="Cirrus SP Usecase" value="Music" />
-+-->
+-->
     <ctl name="DSP1 Firmware" value="Protection" />
     <ctl name="DSP1 Preload Switch" value="1" />
     <ctl name="PCM Source" value="None" />
     <ctl name="ASPTX Ref" value="None" />
+    <ctl name="RDAC2 MUX" value="RX2" />
     <ctl name="HPHL" value="ZERO" />
     <ctl name="HPHR" value="ZERO" />
     <ctl name="EAR_S" value="ZERO" />
     <ctl name="AMP PCM Gain" value="16" />
     <ctl name="PCM Soft Ramp" value="4ms" />
-    <ctl name="INT0_MI2S_RX SampleRate" value="KHZ_48" />
+    <ctl name="INT0_MI2S_RX SampleRate" value="KHZ_96" />
 
 
     <path name="deep-buffer-playback">
