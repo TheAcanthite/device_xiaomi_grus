@@ -120,6 +120,7 @@ vendor.bluetooth.soc=cherokee
 persist.vendor.btstack.enable.splita2dp=true
 persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac
 persist.vendor.btstack.aac_frm_ctl.enabled=true
+ro.bluetooth.library_name=libbluetooth_qti.so
 
 # system property for maximum number of HFP client connections
 bt.max.hfpclient.connections=1
