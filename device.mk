@@ -556,3 +556,6 @@ TARGET_COMMON_QTI_COMPONENTS := \
     telephony \
     wfd
 
+# ParanoidDoze
+PRODUCT_PACKAGES := \
+    ParanoidDoze
