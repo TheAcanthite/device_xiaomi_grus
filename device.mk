@@ -25,7 +25,10 @@ $(call inherit-product, $(LOCAL_PATH)/configs/phone-xhdpi-6144-dalvik-heap.mk)
 $(call inherit-product, vendor/xiaomi-firmware/grus/firmware.mk)
 
 # Overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-pa
+
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Boot animation
