@@ -254,7 +254,6 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/public
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
-include device/qcom/sepolicy/sepolicy.mk
 
 # Ignore SELinux neverallows
 ifneq ($(TARGET_BUILD_VARIANT),user)
