@@ -548,3 +548,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     LatinIME
 
+# QTI common
+TARGET_COMMON_QTI_COMPONENTS := \
+    av \
+    bt \
+    perf \
+    telephony \
+    wfd
+
