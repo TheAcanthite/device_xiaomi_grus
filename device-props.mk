@@ -59,7 +59,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.display.type=oled \
     persist.debug.force_burn_in=true \
-    vendor.livedisplay.enable_sdm_dm=true \
     ro.hardware.vulkan=adreno \
     ro.hardware.egl=adreno
 
