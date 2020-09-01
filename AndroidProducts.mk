@@ -14,9 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/aosp_grus.mk
-
-COMMON_LUNCH_CHOICES := \
-    aosp_grus-user \
-    aosp_grus-userdebug \
-    aosp_grus-eng
+	$(LOCAL_DIR)/mokee_grus.mk

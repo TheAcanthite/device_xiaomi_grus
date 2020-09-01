@@ -26,11 +26,11 @@ $(call inherit-product, vendor/xiaomi-firmware/grus/firmware.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-mokee
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage/lineage-sdk
+    $(LOCAL_PATH)/overlay-mokee/mokee-sdk
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2340
@@ -281,8 +281,11 @@ PRODUCT_COPY_FILES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1 \
-    vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_grus \
+    vendor.mokee.biometrics.fingerprint.inscreen@1.0-service.xiaomi_grus \
     vendor.xiaomi.hardware.fingerprintextension@1.0
+
+PRODUCT_COPY_FILES += \
+    vendor/mokee/config/permissions/vendor.mokee.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/vendor.mokee.biometrics.fingerprint.inscreen.xml
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -466,7 +469,7 @@ PRODUCT_PACKAGES += \
 
 # Trust HAL
 PRODUCT_PACKAGES += \
-    lineage.trust@1.0-service
+    mokee.trust@1.0-service
 
 # USB
 PRODUCT_PACKAGES += \
@@ -575,11 +578,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     LatinIME
 
-# Wallpapers
+# LiveDisplay
 PRODUCT_PACKAGES += \
-    PixelLiveWallpaperPrebuilt
+    vendor.mokee.livedisplay@2.0-service-sdm
 
-# Remove stock apps
-PRODUCT_PACKAGES += \
-    RemovePackages
 
