@@ -73,11 +73,7 @@ BOARD_INCLUDE_RECOVERY_DTBO := true
 endif
 endif
 
-ifeq ($(ENABLE_AB), true)
-    TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery_AB_variant.fstab
-else
-    TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery_non-AB_variant.fstab
-endif
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
 #Enable compilation of oem-extensions to recovery
 #These need to be explicitly

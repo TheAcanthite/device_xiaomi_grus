@@ -130,10 +130,6 @@ PRODUCT_PACKAGES += \
     android.hardware.contexthub@1.0-impl.generic \
     android.hardware.contexthub@1.0-service
 
-# FBE support
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.qti.qseecomd.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.qseecomd.sh
-
 # VB xml
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.verified_boot.xml:system/etc/permissions/android.software.verified_boot.xml
@@ -190,6 +186,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     wificond \
     wifilogd
+
+# Ramdisk
+PRODUCT_PACKAGES += \
+    init.qti.qseecomd.sh \
+    init.target.rc \
+    fstab.qcom
 
 # Sensor conf files
 PRODUCT_COPY_FILES += \
