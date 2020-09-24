@@ -71,6 +71,9 @@ AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
 USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
+
 #Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
 TARGET_HW_DISK_ENCRYPTION_PERF := true
@@ -80,11 +83,6 @@ BOARD_SECCOMP_POLICY := $(DEVICE_PATH)/seccomp
 TARGET_USES_UEFI := true
 BOARD_PRESIL_BUILD := true
 -include vendor/xiaomi/grus/BoardConfigVendor.mk
-
-# Some framework code requires this to enable BT
-BOARD_HAVE_BLUETOOTH := false
-BOARD_USES_WIPOWER := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/qcom/common
 
 USE_OPENGL_RENDERER := true
 BOARD_USE_LEGACY_UI := true
