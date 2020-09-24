@@ -25,9 +25,6 @@ ifneq ($(strip $(TARGET_USES_RRO)),true)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 endif
 
-# Default A/B configuration.
-ENABLE_AB ?= true
-
 TARGET_KERNEL_VERSION := 4.9
 
 TARGET_USES_NQ_NFC := true
@@ -85,21 +82,6 @@ PRODUCT_PACKAGES += android.hardware.media.omx@1.0-impl
 -include $(TOPDIR)hardware/qcom/audio/configs/sdm710/sdm710.mk
 
 PRODUCT_PACKAGES += fs_config_files
-
-ifeq ($(ENABLE_AB), true)
-#A/B related packages
-PRODUCT_PACKAGES += update_engine \
-    update_engine_client \
-    update_verifier \
-    bootctrl.sdm710 \
-    brillo_update_payload \
-    android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-service
-
-#Boot control HAL test app
-PRODUCT_PACKAGES_DEBUG += bootctl
-endif
-
 
 DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
 DEVICE_MATRIX_FILE   := device/qcom/common/compatibility_matrix.xml
