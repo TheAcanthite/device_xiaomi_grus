@@ -13,11 +13,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 $(call inherit-product, device/qcom/common/common64.mk)
 
-PRODUCT_NAME := sdm710
-PRODUCT_DEVICE := sdm710
-PRODUCT_BRAND := Android
-PRODUCT_MODEL := SDM710 for arm64
-
 #Initial bringup flags
 TARGET_USES_AOSP := false
 TARGET_USES_AOSP_FOR_AUDIO := false
@@ -27,7 +22,7 @@ TARGET_USES_QCOM_BSP := false
 TARGET_USES_RRO := true
 
 ifneq ($(strip $(TARGET_USES_RRO)),true)
-DEVICE_PACKAGE_OVERLAYS += device/qcom/sdm710/overlay
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 endif
 
 # Default A/B configuration.
@@ -53,8 +48,8 @@ PRODUCT_PACKAGES += libGLES_android
 
 # Video seccomp policy files
 PRODUCT_COPY_FILES += \
-    device/qcom/sdm710/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
-    device/qcom/sdm710/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
+    $(LOCAL_PATH)/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
+    $(LOCAL_PATH)/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
 
 PRODUCT_BOOT_JARS += tcmiface
 PRODUCT_BOOT_JARS += telephony-ext
@@ -77,7 +72,7 @@ PRODUCT_COPY_FILES += hardware/qcom/media/conf_files/sdm845/system_properties.xm
 
 # Video codec configuration files
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
-PRODUCT_COPY_FILES += device/qcom/sdm710/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml
 
 PRODUCT_COPY_FILES += device/qcom/sdm710/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml
 PRODUCT_COPY_FILES += device/qcom/sdm710/media_codecs_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor.xml
@@ -110,13 +105,13 @@ PRODUCT_PACKAGES_DEBUG += bootctl
 endif
 
 
-DEVICE_MANIFEST_FILE := device/qcom/sdm710/manifest.xml
+DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
 DEVICE_MATRIX_FILE   := device/qcom/common/compatibility_matrix.xml
-DEVICE_FRAMEWORK_MANIFEST_FILE := device/qcom/sdm710/framework_manifest.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE := $(LOCAL_PATH)/framework_manifest.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     device/qcom/common/vendor_framework_compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
-    device/qcom/sdm710/vendor_framework_compatibility_matrix.xml
+    $(LOCAL_PATH)/vendor_framework_compatibility_matrix.xml
 
 #ANT+ stack
 PRODUCT_PACKAGES += \
@@ -141,7 +136,7 @@ PRODUCT_PACKAGES += \
 
 # FBE support
 PRODUCT_COPY_FILES += \
-    device/qcom/sdm710/init.qti.qseecomd.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.qseecomd.sh
+    $(LOCAL_PATH)/init.qti.qseecomd.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.qseecomd.sh
 
 # VB xml
 PRODUCT_COPY_FILES += \
@@ -151,10 +146,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml
 
 # MSM IRQ Balancer configuration file
-PRODUCT_COPY_FILES += device/qcom/sdm710/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
 # Powerhint configuration file
-PRODUCT_COPY_FILES += device/qcom/sdm710/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
 # Camera configuration file. Shared by passthrough/binderized camera HAL
 PRODUCT_PACKAGES += camera.device@3.2-impl
@@ -183,7 +178,7 @@ endif
 
 # WLAN driver configuration file
 PRODUCT_COPY_FILES += \
-    device/qcom/sdm710/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
+    $(LOCAL_PATH)/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
 # MIDI feature
 PRODUCT_COPY_FILES += \
@@ -200,7 +195,7 @@ PRODUCT_PACKAGES += \
 
 # Sensor conf files
 PRODUCT_COPY_FILES += \
-    device/qcom/sdm710/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
+    $(LOCAL_PATH)/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.compass.xml \
     frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.gyroscope.xml \

@@ -3,6 +3,8 @@
 # Product-specific compile-time definitions.
 #
 
+DEVICE_PATH := device/xiaomi/grus
+
 TARGET_BOARD_PLATFORM := sdm710
 TARGET_BOOTLOADER_BOARD_NAME := sdm710
 
@@ -23,12 +25,12 @@ TARGET_2ND_CPU_VARIANT := cortex-a9
 TARGET_HW_DISK_ENCRYPTION := true
 TARGET_HW_DISK_ENCRYPTION_PERF := true
 
-BOARD_SECCOMP_POLICY := device/qcom/$(TARGET_BOARD_PLATFORM)/seccomp
+BOARD_SECCOMP_POLICY := $(DEVICE_PATH)/seccomp
 
 TARGET_USES_UEFI := true
 TARGET_NO_KERNEL := false
 BOARD_PRESIL_BUILD := true
--include $(QCPATH)/common/sdm710/BoardConfigVendor.mk
+-include vendor/xiaomi/grus/BoardConfigVendor.mk
 
 # Some framework code requires this to enable BT
 BOARD_HAVE_BLUETOOTH := false
@@ -69,9 +71,9 @@ endif
 endif
 
 ifeq ($(ENABLE_AB), true)
-    TARGET_RECOVERY_FSTAB := device/qcom/sdm710/recovery_AB_variant.fstab
+    TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery_AB_variant.fstab
 else
-    TARGET_RECOVERY_FSTAB := device/qcom/sdm710/recovery_non-AB_variant.fstab
+    TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery_non-AB_variant.fstab
 endif
 
 #Enable compilation of oem-extensions to recovery

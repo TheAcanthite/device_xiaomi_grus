@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/sdm710.mk
+	$(LOCAL_DIR)/lineage_grus.mk
