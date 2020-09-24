@@ -192,9 +192,6 @@ USE_SENSOR_MULTI_HAL := true
 #Enable QTI specific Camera2Client layer
 TARGET_USES_QTI_CAMERA2CLIENT := true
 
-#Add non-hlos files to ota packages
-ADD_RADIO_FILES := true
-
 #To use libhealthd.msm instead of libhealthd.default
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
 
